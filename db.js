@@ -272,7 +272,8 @@ makeRequest = async (req, res) => {
         return res.json(jsonKeysToLowerCase(result.recordset[0]));
     }
     catch(err){
-        if(err.message.indexOf('Connection lost') !== -1){
+        if(err.message.indexOf('Connection lost') !== -1 
+        || err.message.indexOf('Login failed') !== -1){
             res.status(500);
         }
         console.log('status...'+res.statusCode);
