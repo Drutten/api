@@ -8,6 +8,16 @@
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drutten/api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drutten/api/issues"
+  },
+  "homepage": "https://github.com/Drutten/api#readme",
   "dependencies": {
     "common-tags": "^1.8.0",
     "cors": "^2.8.5",
