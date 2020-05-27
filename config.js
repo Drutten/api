@@ -1,6 +1,6 @@
 const config = {
-  user: '',
-  password: '',
+  user: 'user2',
+  password: 'Public123',
   server: 'drutten1.database.windows.net',
   database: 'WebShop',
 };
