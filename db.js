@@ -1,7 +1,11 @@
 const sql = require('mssql');
 const config = require('./config');
 
-//Anropas av get funktionen. hateoas är array av objekt
+
+
+
+
+//Anropas vid get, skapar länkar som läggs till records
 createHateoasLinks = (req, records, hateoas) =>{
 
   return records.recordset.map((record) => {
@@ -79,6 +83,8 @@ createEndpoint = (req) => {
 
 
 
+
+
 //Skapa sp name
 createSpName = (req) => {
     
@@ -123,6 +129,8 @@ createSpName = (req) => {
     }
     
 }
+
+
 
 
 
@@ -188,9 +196,14 @@ createParameters = (req) => {
 }
 
 
+
+
+
+
+
 queryDatabase = async (req, res) => {
     try{
-        console.log(`test....${req.sp} ${req.sqlParameters}`);
+        //console.log(`test....${req.sp} ${req.sqlParameters}`);
         await sql.connect(config);
         const result = await sql.query(`EXEC ${req.sp} ${req.sqlParameters}`);
         if(req.method.toUpperCase() == 'GET'){
@@ -229,6 +242,9 @@ queryDatabase = async (req, res) => {
         throw err;
     }
 }
+
+
+
 
 
 
