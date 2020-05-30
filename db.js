@@ -206,7 +206,7 @@ queryDatabase = async (req, res) => {
         //console.log(`test....${req.sp} ${req.sqlParameters}`);
         await sql.connect(config);
         const result = await sql.query(`EXEC ${req.sp} ${req.sqlParameters}`);
-        if(req.method.toUpperCase() == 'GET'){
+        if(req.method.toUpperCase() == 'GET' && !req.isPlural){
             if (result.recordset.length == 0) {
                 res.status(404);
                 throw new Error('Could not find the resource');
@@ -272,7 +272,6 @@ makeRequest = async (req, res) => {
         const result = await queryDatabase(req, res);
 
         if(req.sqlError){
-            console.log('hello');
             return res.send(res.sqlError);
         }
         
