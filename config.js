@@ -1,8 +1,9 @@
+// Database does not exist anymore
 const config = {
-  user: 'user2',
-  password: 'Public123',
-  server: 'drutten1.database.windows.net',
-  database: 'WebShop',
+  user: '',
+  password: '',
+  server: '',
+  database: '',
 };
 
 module.exports = config;
